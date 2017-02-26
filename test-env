@@ -1,0 +1,4 @@
+gpu_docker_image=hello-world
+cpu_docker_image=hello-world
+gpu_dockers="1 2 3 4"
+cpu_dockers="5 6 7 8"
