@@ -1,0 +1,4 @@
+From ai02:5000/tensorflow:1.0.0-py3
+
+RUN mv /notebooks /notebooks.orig
+COPY ./notebooks /notebooks
