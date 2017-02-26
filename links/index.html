@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+
+<script>
+
+var app = angular.module('linksApp', []);
+app.controller('linksCtrl', function($scope, $http) {
+    $scope.links = [];
+    $http.get('links.txt').then(function(response) {
+        var links = response.data.split('\n');
+        for (var i = 0; i < links.length; i++) {
+            if (links[i].trim()) {
+                $scope.links.push(links[i].trim());
+            }
+        }
+    });
+});
+
+</script>
+
+<body>
+
+<div ng-app="linksApp" ng-controller="linksCtrl">
+请使用与您座位对应的服务器：
+  <div ng-repeat="link in links track by $index"/>
+    <p><a href="{{ link }}">Server {{ $index }}</a></p>
+  </div>
+</div>
+
+</body>
+</html>
