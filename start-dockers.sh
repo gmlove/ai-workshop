@@ -16,7 +16,7 @@ echo 'distribute the links below to users:'
 sleep 5
 
 for i in $gpu_dockers $cpu_dockers; do
-    docker logs twtf$i 2>&1 | grep -v NotebookApp | grep \?token= | sed "s/localhost:8888/`hostname`:1000$i/"
+    docker logs twtf$i 2>&1 | grep -v NotebookApp | grep \?token= | sed "s/localhost:8888/$ip:1000$i/" | tee -a links/links.txt
 done
 
 
