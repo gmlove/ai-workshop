@@ -19,13 +19,24 @@ app.controller('linksCtrl', function($scope, $http) {
 
 </script>
 
+<style type="text/css">
+.server-link {
+    display: inline-block;
+    float: left;
+    width: 200px;
+}
+</style>
+
 <body>
 
 <div ng-app="linksApp" ng-controller="linksCtrl">
-请使用与您座位对应的服务器：
+  <h3>请使用与您座位对应的服务器：</h3>
   <div ng-repeat="link in links track by $index"/>
-    <p><a href="{{ link }}">Server {{ $index }}</a></p>
+    <p class="server-link"><a href="{{ link }}">Server {{ $index }}</a></p>
   </div>
+</div>
+<div  style="clear: both;">
+    <h3><a href="numseq-android-debug.apk">Android 应用下载</a></h3>
 </div>
 
 </body>
