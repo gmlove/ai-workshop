@@ -8,7 +8,7 @@ for i in $gpu_dockers; do
 done
 
 for i in $cpu_dockers; do
-    docker run -d -v /data/$host_name/workshop/data:/notebooks/data -m 4000m --cpus 3 --name twtf$i -p 1000$i:8888 $cpu_docker_image
+    docker run -d -v /data/$host_name/workshop/data:/notebooks/data -m 8000m --cpus 8 --name twtf$i -p 1000$i:8888 $cpu_docker_image
 done
 
 echo 'distribute the links below to users:'

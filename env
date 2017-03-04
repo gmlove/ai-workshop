@@ -2,7 +2,7 @@ gpu_docker_image=ai02:5000/twtf:1.0.0-gpu
 cpu_docker_image=ai02:5000/twtf:1.0.0
 
 gpu_dockers="1 2 3 4"
-cpu_dockers="5 6 7 8"
+cpu_dockers="5 6"
 gpu2_dockers="11 12 13 14"
 ip=$(ifconfig eno1 | grep 'inet addr' | egrep -o 'addr:[0-9.]*' | cut -d':' -f2)
 host_name=`hostname`
